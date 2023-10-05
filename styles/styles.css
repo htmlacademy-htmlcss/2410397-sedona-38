@@ -18,4 +18,23 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.main-header {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.navigation-link {
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+  background-color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
 }
