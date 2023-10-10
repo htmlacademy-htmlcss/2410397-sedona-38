@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
     <link rel="stylesheet" href="styles/styles.css">
   </head>
+
   <body>
     <div class="wrapper">
       <header class="main-header">
@@ -32,7 +34,7 @@
             <li class="user-item">
               <a class="user-link user-link-favourites" href="#">
                 <span class="visually-hidden">Избранное</span>
-                  <output class="favourites-count">12</output>
+                <output class="favourites-count">12</output>
               </a>
             </li>
           </ul>
@@ -40,7 +42,7 @@
         </nav>
       </header>
       <main class="main main-catalog">
-        <div class="filter">
+        <section class="filter">
           <header class="filter-header">
             <h1 class="filter-main-title">Гостиницы Седоны</h1>
             <ul class="breadcrumbs-list">
@@ -134,12 +136,12 @@
               </fieldset>
             </form>
           </div>
-        </div>
+        </section>
         <section class="catalog">
           <div class="results-sorting">
-            <h2 class="results page-title">Найдено гостиниц:<output class="results-number">38</output></h2>
+            <h2 class="results page-title">Найдено гостиниц: <output class="results-number">38</output></h2>
             <select class="results-select" name="sorting" aria-label="Сортировка">
-              <option value="cheap">Сначала дешевые</option>
+              <option value="cheap" selected>Сначала дешевые</option>
               <option value="popular">Сначала популярные</option>
               <option value="expensive">Сначала дорогие</option>
             </select>
@@ -172,56 +174,56 @@
                 </a>
                 <p class="hotel-text hotel-type">Гостиница</p>
                 <p class="hotel hotel-price">От 4000 ₽</p>
-                <a class="button-more button" href="#">Подробнее</a>
-                <button class="button-favourites button button-light">В избранное</button>
+                <a class="hotel-button-more button" href="#">Подробнее</a>
+                <button class="hotel-favourites button button-light">В избранное</button>
                 <p class="hotel-rating-star hotel-rating-4">
                   <span class="visually-hidden">Четырехзвездочный отель</span>
                 </p>
                 <p class="hotel-rating-text">Рейтинг: 8,5</p>
               </li>
               <li class="hotel-card">
-                <a class="hotel-image-link" href="#" tabindex="-1">
+                <a class="hotel-image-link" href="#">
                   <img src="images/catalog/hotel-2.jpg" width="300" height="212" alt="Горы и радуга.">
                 </a>
-                <a class="hotel-title-link" href="#" tabindex="-1">
+                <a class="hotel-title-link" href="#">
                   <h3 class="hotel-card-title">Villas at Poco Diablo</h3>
                 </a>
                 <p class="hotel-text hotel-type">Гостиница</p>
                 <p class="hotel-text hotel-price">От 5000 ₽</p>
-                <a class="button-more button" href="#">Подробнее</a>
-                <button class="button-favourites button button-active">В избранном</button>
+                <a class="hotel-button-more button" href="#">Подробнее</a>
+                <button class="hotel-favourites hotel-favourites-active button button-light">В избранном</button>
                 <p class="hotel-rating-star hotel-rating-4">
                   <span class="visually-hidden">Четырехзвездочный отель</span>
                 </p>
                 <p class="hotel-rating-text">Рейтинг: 9,2</p>
               </li>
               <li class="hotel-card">
-                <a class="hotel-image-link" href="#" tabindex="-1">
+                <a class="hotel-image-link" href="#">
                   <img src="images/catalog/hotel-3.jpg" width="300" height="212" alt="Горы из красного песчаника.">
                 </a>
-                <a class="hotel-title-link" href="#" tabindex="-1">
-                  <h3 class="hotel-card-title">Desert Quail Inn</h3>
+                <a class="hotel-title-link" href="#">
+                  <h3 class=" hotel-card-title">Desert Quail Inn</h3>
                 </a>
                 <p class="hotel-text hotel-type">Гостиница</p>
                 <p class="hotel-text hotel-price">От 2500 ₽</p>
-                <a class="button-more button" href="#">Подробнее</a>
-                <button class="button-favourites button button-light">В избранное</button>
+                <a class="hotel-button-more button" href="#">Подробнее</a>
+                <button class="hotel-favourites button button-light">В избранное</button>
                 <p class="hotel-rating-star hotel-rating-3">
                   <span class="visually-hidden">Трехзвездочный отель</span>
                 </p>
                 <p class="hotel-rating-text">Рейтинг: 6,9</p>
               </li>
               <li class="hotel-card">
-                <a class="hotel-image-link" href="#" tabindex="-1">
+                <a class="hotel-image-link" href="#">
                   <img class="hotel-card-img" src="images/catalog/hotel-4.jpg" width="300" height="212" alt="Горы на фоне ночного неба.">
                 </a>
-                <a class="hotel-title-link" href="#" tabindex="-1">
+                <a class="hotel-title-link" href="#">
                   <h3 class="hotel-card-title">GreenTree Inn</h3>
                 </a>
                 <p class="hotel-text hotel-type">Гостиница</p>
                 <p class="hotel-text hotel-price">От 1500 ₽</p>
-                <a class="button-more button" href="#">Подробнее</a>
-                <button class="button-favourites button button-light">В избранное</button>
+                <a class="hotel-button-more button" href="#">Подробнее</a>
+                <button class="hotel-favourites button button-light">В избранное</button>
                 <p class="hotel-rating-star hotel-rating-2">
                   <span class="visually-hidden">Двухзвездочный отель</span>
                 </p>
@@ -257,7 +259,7 @@
           </div>
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="visually-hidden" for="user-email">Email</label>
-            <input class="subscribe-input field" type="email" name="email" id="user-email" placeholder="Ваш e-mail">
+            <input class="subscription-input field" type="email" name="email" id="user-email" placeholder="Ваш e-mail">
             <button class="subscription-button button button-light" type="submit">Подписаться</button>
           </form>
         </section>
@@ -291,4 +293,5 @@
       </footer>
     </div>
   </body>
+
 </html>
