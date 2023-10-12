@@ -1,7 +1,7 @@
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans";
 
   font-display: swap;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
@@ -10,7 +10,7 @@
 @font-face {
   font-style: normal;
   font-weight: 700;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans";
 
   font-display: swap;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
@@ -24,7 +24,7 @@
 
 html {
   box-sizing: border-box;
-  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -84,6 +84,7 @@ body {
 
   background-color: #756157;
   border: none;
+  border-radius: 4px;
 }
 
 .button-light {
@@ -126,9 +127,40 @@ body {
 }
 
 /* main-index */
+.main-header {
+  position: relative;
+  z-index: 1;
+
+  padding: 0 70px;
+}
+
+.navigation {
+  display: flex;
+}
+
+.logo-link {
+  display: block;
+  width: 140px;
+  margin-right: 28px;
+  margin-bottom: -12px;
+}
+
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 465px;
+  margin: 0;
+  margin-right: auto;
+  padding: 0;
+
+  list-style: none;
+  text-align: center;
+}
 
 .navigation-link {
   display: inline-block;
+  width: 125px;
   padding: 19px 0;
 
   font-weight: 700;
@@ -143,14 +175,34 @@ body {
 
   text-decoration-color: #756257;
   text-decoration-thickness: 2px;
-  text-underline-offset: 21px;
+  text-underline-offset: 23px;
 }
+
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 110px;
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* display: grid;
+   grid-template-columns: 22px 22px;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;*/
 
 .user-link {
   position: relative;
+
   display: inline-block;
-  width: 44px;
+  min-width: 44px;
   height: 44px;
+
   color: #000000;
   text-decoration: none;
 
@@ -164,23 +216,43 @@ body {
 }
 
 .user-link-favourites {
+  position: relative;
+  z-index: 1;
+
   background-image: url("../images/svg/heart.svg");
 }
 
 .favourites-count {
+  position: absolute;
+  right: 9%;
+  bottom: 53%;
+  z-index: 2;
+
+  padding: 4px;
+
   font-size: 10px;
   line-height: 10px;
+  font-family: "PT Sans", sans-serif;
   color: #ffffff;
 
   background-color: #7db54f;
   border-radius: 10px;
 }
 
+.navigation-button {
+  /* display: block; */
+  width: 160px;
+  margin: auto 0;
+}
+
 .hero {
+  min-height: 485px;
+  padding-top: 51px;
+
   text-align: center;
   color: #ffffff;
 
-  background-color: #343e47;
+  background-color: #534f50;
   background-image: url("../images/svg/zigzag.svg"),
     url("../images/main-background.jpg");
   background-repeat: no-repeat;
@@ -190,6 +262,7 @@ body {
 
 .page-title {
   margin: 0;
+
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -200,6 +273,7 @@ body {
 
 .page-text {
   margin: 0;
+
   font-size: 22px;
   line-height: 26px;
   text-align: center;
@@ -213,6 +287,7 @@ body {
   line-height: 28px;
   color: #000000;
   text-transform: uppercase;
+  /* border-bottom: 2px solid olive; */
 }
 
 .item-text {
@@ -260,6 +335,11 @@ body {
   background-image: url("../images/svg/souvenirs.svg");
 }
 
+.subscription {
+  min-height: 419px;
+  padding: 96px 258px 104px;
+}
+
 .subscription-home {
   text-align: center;
   color: #ffffff;
@@ -278,12 +358,60 @@ body {
   font-weight: 400;
 }
 
+.subscription-title {
+  margin-bottom: 20px;
+}
+
+.subscription-text {
+  margin-bottom: 54px;
+}
+
+.subscription-form {
+  display: grid;
+
+  grid-template-columns: 452px 232px;
+}
+
+.subscription-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.subscription-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.main-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 70px 30px;
+}
+
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 190px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
 .footer-phone {
+  display: block;
+  margin: auto;
+
   font-size: 40px;
   line-height: 40px;
   text-align: center;
   color: #000000;
   text-decoration: none;
+}
+
+.htmlacademy-link {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* catalog */
@@ -371,6 +499,11 @@ body {
   font-size: 24px;
   line-height: 28px;
 }
+
+/* .hotel-image-link {
+  max-width: 100%;
+  height: auto;
+} */
 
 .hotel-rating-text {
   font-size: 16px;
