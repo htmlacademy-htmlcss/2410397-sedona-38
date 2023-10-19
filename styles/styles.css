@@ -139,6 +139,13 @@ img {
   opacity: 0.6;
 }
 
+.list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
 /* main-index */
 .main-header {
   position: relative;
@@ -168,11 +175,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   max-width: 500px;
-  margin: 0;
   margin-right: auto;
-  padding: 0;
-
-  list-style: none;
 }
 
 .navigation-link {
@@ -198,11 +201,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 0;
   margin-right: 20px;
-  padding: 0;
-
-  list-style: none;
 }
 
 .user-link {
@@ -292,10 +291,7 @@ img {
 
 .advantages-list {
   display: grid;
-  margin: 0;
-  padding: 0;
 
-  list-style: none;
   text-align: center;
 
   grid-template-columns: repeat(3, 1fr);
@@ -323,7 +319,7 @@ img {
 
 .advantages-item-full {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 
   color: #ffffff;
 
@@ -346,7 +342,7 @@ img {
   flex-direction: row-reverse;
 }
 
-.advantages-img {
+.advantages-image {
   flex-shrink: 0;
   width: 800px;
   margin: 0;
@@ -392,12 +388,8 @@ img {
 
 .services-list {
   display: grid;
-  margin: 0;
-  padding: 0;
 
-  list-style: none;
-
-  grid-template-columns: repeat (3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .services-item {
@@ -515,13 +507,9 @@ img {
   flex-wrap: wrap;
   align-items: center;
   max-width: 150px;
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
 }
 
-.social-link {
+.footer-social-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -550,6 +538,8 @@ img {
 /* catalog */
 
 .filter {
+  padding: 0 70px 70px;
+
   color: #ffffff;
 
   background-color: #755651;
@@ -560,9 +550,19 @@ img {
 
 .filter-main-title {
   margin: 0;
+  margin-bottom: 8px;
 
   font-size: 60px;
   line-height: 78px;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+
+  gap: 27px;
 }
 
 .breadcrumbs-link {
@@ -580,8 +580,20 @@ img {
   background-image: url("../images/svg/breadcrumbs-home.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 12px 12px;
+  background-size: cover;
 }
+
+/* .breadcrumbs-list li:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    bottom: 4px;
+    right: -15px;
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
+    box-shadow: inset -1px -1px 0 0 #ffffff;
+    transform: rotate(-45deg);
+} */
 
 .filter-name {
   font-weight: 700;
