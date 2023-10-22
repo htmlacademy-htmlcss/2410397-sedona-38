@@ -224,7 +224,6 @@ img {
 
 .user-link-favourites {
   position: relative;
-  z-index: 1;
 
   background-image: url("../images/svg/heart.svg");
 }
@@ -233,7 +232,7 @@ img {
   position: absolute;
   right: 9%;
   bottom: 53%;
-  z-index: 2;
+  z-index: 1;
 
   min-width: 20px;
   min-height: 20px;
@@ -583,16 +582,20 @@ img {
   background-size: cover;
 }
 
-/* .breadcrumbs-list li:not(:last-child)::after {
-    position: absolute;
-    content: "";
-    bottom: 4px;
-    right: -15px;
-    width: 7px;
-    height: 7px;
-    border-radius: 1px;
-    box-shadow: inset -1px -1px 0 0 #ffffff;
-    transform: rotate(-45deg);
+/* не получилось спозиционировать стрелочку для всех пунктов списка. С текущими значениями работает только для breadcrumbs-link-home */
+
+/* .breadcrumbs-list:not(:last-child)::after {
+  content: "";
+  position: absolute;
+
+  width: 7px;
+  height: 10px;
+  margin-top: 3px;
+  margin-left: 23px;
+
+  background-image: url("../images/svg/breadcrumbs-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 } */
 
 .filter-form {
@@ -620,38 +623,47 @@ img {
   white-space: normal;
 }
 
-/* .control-list {
-  display: grid;
-  gap: 16px;
-
-  grid-template-columns: 20px 1fr;
-} */
-
-/* .control-item {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 16px;
-} */
-
 .control-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
 
   gap: 16px;
 }
 
+/* пока не получилось доработать инпуты */
+
 .control-input {
+  position: relative;
+
   width: 20px;
   height: 20px;
   margin: 0;
+  margin-right: 16px;
 
   background-color: #ffffff;
   border-radius: 4px;
+
+  appearance: none;
+}
+
+.control-input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 19px;
+
+  background-image: url("../images/svg/tick-checkbox.svg");
+  transform: translate(-50%, -50%);
 }
 
 .control-label {
   line-height: 23px;
+}
+
+.control-label input:checked ~ .control-input::before {
+  display: block;
 }
 
 .filter-group-range {
