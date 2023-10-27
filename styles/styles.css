@@ -98,6 +98,14 @@ img {
   border-radius: 4px;
 }
 
+.button-light {
+  background-color: #82b3d3;
+}
+
+.button-transparent {
+  background-color: transparent;
+}
+
 .page-title {
   margin: 0;
 
@@ -156,6 +164,7 @@ img {
 
 .navigation {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 
@@ -249,7 +258,7 @@ img {
 
 .navigation-button {
   width: 160px;
-  margin: auto 0;
+  margin-top: 14px;
 }
 
 .hero {
@@ -351,6 +360,8 @@ img {
   display: block;
   width: 100%;
   height: 100%;
+
+  object-fit: cover;
 }
 
 .advantages-subtitle {
@@ -501,39 +512,6 @@ img {
   border-bottom-right-radius: 0;
 }
 
-.social {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 150px;
-}
-
-.footer-social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 41px;
-
-  color: #82b3d3;
-}
-
-.footer-phone {
-  font-size: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #000000;
-  text-decoration: none;
-}
-
-.htmlacademy-link {
-  display: block;
-  width: 115px;
-  height: 33px;
-
-  color: #000000;
-}
-
 /* catalog */
 
 .filter {
@@ -582,21 +560,24 @@ img {
   background-size: cover;
 }
 
-/* не получилось спозиционировать стрелочку для всех пунктов списка. С текущими значениями работает только для breadcrumbs-link-home */
+.breadcrumbs-item {
+  position: relative;
+}
 
-/* .breadcrumbs-list:not(:last-child)::after {
+.breadcrumbs-item:not(:last-child)::after {
   content: "";
   position: absolute;
+  top: 50%;
+  right: -18px;
 
   width: 7px;
   height: 10px;
-  margin-top: 3px;
-  margin-left: 23px;
 
   background-image: url("../images/svg/breadcrumbs-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
-} */
+  transform: translateY(-50%);
+}
 
 .filter-form {
   display: flex;
@@ -629,41 +610,57 @@ img {
   gap: 16px;
 }
 
-/* пока не получилось доработать инпуты */
-
 .control-input {
   position: relative;
 
   width: 20px;
   height: 20px;
   margin: 0;
-  margin-right: 16px;
 
   background-color: #ffffff;
+  border: none;
   border-radius: 4px;
 
   appearance: none;
 }
 
-.control-input::before {
+.control-text {
+  padding-left: 16px;
+}
+
+.control-input[type="checkbox"]:checked {
+  background-image: url("../images/svg/tick-checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.control-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
 
-  width: 20px;
-  height: 19px;
+  width: 10px;
+  height: 10px;
 
-  background-image: url("../images/svg/tick-checkbox.svg");
+  background-color: #3f5e72;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
 .control-label {
-  line-height: 23px;
-}
+  display: grid;
+  align-items: center;
+  width: fit-content;
 
-.control-label input:checked ~ .control-input::before {
-  display: block;
+  line-height: 23px;
+
+  grid-template-columns: repeat(2, auto);
 }
 
 .filter-group-range {
@@ -697,20 +694,13 @@ img {
   gap: 32px;
 }
 
-.button-light {
-  background-color: #82b3d3;
-}
-
-.button-transparent {
-  background-color: transparent;
-}
-
 .catalog {
   padding: 50px 70px 60px;
 }
 
 .results-sorting {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -721,9 +711,14 @@ img {
 
 .results-select {
   display: flex;
-  min-width: 292px;
+  width: 292px;
   margin-right: 70px;
   padding: 14px 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: "PT Sans", sans-serif;
 
   border: 2px solid #e5e5e5;
   border-radius: 4px;
@@ -765,6 +760,7 @@ img {
 
 .hotel-list {
   display: grid;
+  margin-bottom: 40px;
 
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -779,6 +775,7 @@ img {
 
   gap: 16px 20px;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 212px 1fr;
 }
 
 .hotel-image-link {
@@ -811,7 +808,7 @@ img {
 }
 
 .hotel-price {
-  text-align: end;
+  text-align: right;
 }
 
 .hotel-rating-text {
@@ -852,7 +849,6 @@ img {
 .pagination-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 40px 0 0;
   padding-top: 40px;
 
   border-top: 1px solid #e6e6e6;
@@ -865,7 +861,7 @@ img {
   justify-content: center;
   align-items: center;
   min-width: 60px;
-  height: 60px;
+  min-height: 60px;
   padding: 10px;
 
   font-weight: 700;
@@ -905,5 +901,47 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 70px 30px;
+  padding: 45px 70px 35px;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 150px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 48px;
+  height: 40px;
+
+  color: #82b3d3;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: #68a2ca;
+}
+
+.social-link:active {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
+.footer-phone {
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+}
+
+.htmlacademy-link {
+  display: block;
+  width: 115px;
+  height: 34px;
+
+  color: #000000;
 }
