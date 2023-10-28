@@ -1057,13 +1057,13 @@ img {
   border-radius: 4px;
 }
 
-.pagination-link:not(.pagination-link-more):hover,
-.pagination-link:not(.pagination-link-more):focus {
+.pagination-link:not(.pagination-link-current, .pagination-link-more):hover,
+.pagination-link:not(.pagination-link-current, .pagination-link-more):focus {
   background-color: #68a2ca;
   box-shadow: inset 0 0 0 1px #82b3d3;
 }
 
-.pagination-link:not(.pagination-link-more):active {
+.pagination-link:not(.pagination-link-current, .pagination-link-more):active {
   color: rgba(255, 255, 255, 0.3);
 }
 
