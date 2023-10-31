@@ -797,6 +797,32 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.range-item {
+  position: relative;
+}
+
+.range-item label {
+  position: absolute;
+  right: 0;
+
+  padding: 13px 20px 13px 3px;
+
+  color: #000000;
+
+  opacity: 0.3;
+}
+
+.range-input {
+  padding: 12px 20px;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  margin: 0;
+
+  appearance: none;
+}
+
 .range-input-min {
   border-radius: 4px 0 0 4px;
 }
@@ -805,8 +831,38 @@ img {
   border-radius: 0 4px 4px 0;
 }
 
+.range-scale {
+  position: relative;
+
+  height: 4px;
+
+  background-color: grey;
+  /*  изменить цвет */
+}
+
+.range-bar {
+  position: absolute;
+
+  height: 4px;
+
+  background-color: #ffffff;
+}
+
+.range-toggle-btn {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .range-toggle-btn:hover {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  /* перепроверить значения  */
 }
 
 .range-toggle-btn:focus {
@@ -815,7 +871,18 @@ img {
 }
 
 .range-toggle-btn:active {
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4), 0 0 0 2px #83b3d3;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(131, 179, 211, 1);
+  /* не rgba */
+}
+
+.range-toggle-btn-min {
+  top: -8px; /* 20px размер ручки - 4px высота бара = 16px - край, по которому выравнивается элемент. чтобы компенсировать его положение задаем половину полученного размера.  */
+  left: 0;
+}
+
+.range-toggle-btn-max {
+  top: -8px;
+  right: 0;
 }
 
 .filter-group-buttons {
