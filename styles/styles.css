@@ -911,6 +911,7 @@ img {
   margin-right: auto;
 }
 
+/* что-то не так с слектом */
 .results-select {
   width: 292px;
   padding: 5px 40px 5px 18px;
@@ -920,8 +921,13 @@ img {
   line-height: 21px;
   font-family: "PT Sans", sans-serif;
 
+  background-image: url("../images/svg/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+
+  appearance: none;
 }
 
 .results-select:hover,
