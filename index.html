@@ -174,42 +174,41 @@
     <div class="modal-container ">
       <div class="modal modal-search">
         <button class="modal-close-button">
+          <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" />
+          </svg>
           <span class="visually-hidden">Закрыть</span>
         </button>
         <section class="modal-content">
           <h2 class="modal-title page-title">Поиск гостиницы в Седоне</h2>
-          <form class="modal-filter-form" action="https://echo.htmlacademy.ru/" method="post">
-            <div class="modal-filter filter-group">
-              <label class="modal-filter-label filter-name" for="checkin">Дата Заезда:</label>
-              <div class="input-container">
-                <input class="modal-filter-input field" type="text" id="checkin" name="checkin" value="27 апреля 2020">
-              </div>
-              <p class="modal-filter-comment comment-fault">Мы не можем отправить вас в прошлое.</p>
+          <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="form-group date">
+              <label class="date-label filter-name" for="checkin">Дата Заезда:</label>
+              <input class="date-input field" type="text" id="checkin" name="checkin" value="27 апреля 2020">
+              <p class="form-comment form-comment-invalid">Мы не можем отправить вас в прошлое.</p>
             </div>
-            <div class="modal-filter filter-group">
-              <label class="modal-filter-label filter-name" for="checkout">Дата Выезда:</label>
-              <div class="input-container">
-                <input class="modal-filter-input field" type="text" id="checkout" name="checkout" value="1 сентября 2023">
-              </div>
-              <p class="modal-filter-comment comment-fault">На эти даты есть свободные номера. Пока есть.</p>
+            <div class="form-group date">
+              <label class="date-label filter-name" for="checkout">Дата Выезда:</label>
+              <input class="date-input field" type="text" id="checkout" name="checkout" value="1 сентября 2023">
+              <p class="form-comment">На эти даты есть свободные номера. Пока есть.</p>
             </div>
-            <div class="filter-count filter-group">
-              <label class="filter-count-label modal-filter-label filter-name" for="adults-count">Взрослые:</label>
-              <input class="filter-count-input field" type="text" id="adults-count" name="adults-count" value="2">
+            <div class="form-group guests">
+              <label class="guests-label filter-name" for="adults-count">Взрослые:</label>
+              <input class="guests-input field" type="text" id="adults-count" name="adults-count" value="2">
             </div>
-            <div class="filter-count filter-group">
-              <span class="filter-count-label">
-                <label class="filter-count-label modal-filter-label filter-name" for="children-count">Дети:</label>
-                <!-- <span class="tooltip">
-                  <button class="tooltip-toggle" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
-                      <path fill="#fff" fill-rule="evenodd" d="M9 4h2v2H9V4Zm2 12H9V7h2v9Z" clip-rule="evenodd" />
+            <div class="form-group guests">
+              <span class="children-label">
+                <label class="guests-label filter-name children-label" for="children-count">Дети:</label>
+                <span class="tooltip">
+                  <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M9 4h2v2H9V4Zm2 12H9V7h2v9Z" clip-rule="evenodd" />
                     </svg>
                   </button>
-                  <p class="tooltip-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
-                </span> -->
+                  <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети <br>до 6 лет размещаются бесплатно.</span>
+                </span>
               </span>
-              <input class="filter-count-input field" type="text" id="children-count" name="children-count" value="2">
+              <input class="guests-input field" type="text" id="children-count" name="children-count" value="2">
             </div>
             <button class="modal-button button">Найти</button>
 
