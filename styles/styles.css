@@ -391,6 +391,7 @@ img {
 }
 
 .advantages-intro {
+  margin-bottom: 19px;
   padding: 69px 70px;
 }
 
@@ -490,7 +491,7 @@ img {
 }
 
 .services-intro {
-  padding: 69px 70px;
+  padding: 64px 70px;
 }
 
 .services-title {
@@ -546,7 +547,7 @@ img {
 }
 
 .search-text {
-  margin-bottom: 50px;
+  margin-bottom: 53px;
 }
 
 .search-button {
@@ -584,7 +585,7 @@ img {
 }
 
 .subscription-text {
-  margin-bottom: 50px;
+  margin-bottom: 54px;
 }
 
 .subscription-form {
@@ -1017,7 +1018,7 @@ img {
 
 .hotel-list {
   display: grid;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -1537,6 +1538,6 @@ img {
   background-color: #e5e5e5;
 }
 
-.modal-container-close {
+/* .modal-container-close {
   display: none;
-}
+} */
