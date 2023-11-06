@@ -55,7 +55,7 @@
         </section>
         <section class="advantages">
           <div class="advantages-intro">
-            <h2 class="advantages-title page-title">Седона — небольшой городок в&nbsp; Аризоне, <br>заслуживающий большего!</h2>
+            <h2 class="advantages-title page-title">Седона — небольшой городок в&nbsp;Аризоне, <br>заслуживающий большего!</h2>
             <p class="advantages-text page-text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </div>
           <ul class="advantages-list list-reset">
@@ -170,7 +170,8 @@
         </a>
       </footer>
     </div>
-    <div class="modal-container modal-container-close">
+    <!-- класс modal-container-close закрывает модальное окно. -->
+    <div class="modal-container modal-container-close ">
       <div class="modal modal-search">
         <button class="modal-close-button">
           <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
@@ -180,36 +181,52 @@
         </button>
         <section class="modal-content">
           <h2 class="modal-title page-title">Поиск гостиницы в Седоне</h2>
-          <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+          <form class="modal-form form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="form-group date">
-              <label class="date-label filter-name" for="checkin">Дата Заезда:</label>
-              <input class="date-input field" type="text" id="checkin" name="checkin" value="27 апреля 2020">
+              <label class="date-label form-label" for="checkin">Дата Заезда:</label>
+              <input class="date-input field" type="text" id="checkin" name="checkin" placeholder="Укажите дату" value="27 апреля 2020" required>
               <p class="form-comment form-comment-invalid">Мы не можем отправить вас в прошлое.</p>
             </div>
             <div class="form-group date">
-              <label class="date-label filter-name" for="checkout">Дата Выезда:</label>
-              <input class="date-input field" type="text" id="checkout" name="checkout" value="1 сентября 2023">
+              <label class="date-label form-label" for="checkout">Дата Выезда:</label>
+              <input class="date-input field" type="text" id="checkout" name="checkout" placeholder="Укажите дату" value="1 сентября 2023" required>
               <p class="form-comment">На эти даты есть свободные номера. Пока есть.</p>
             </div>
             <div class="form-group guests">
-              <label class="guests-label filter-name" for="adults-count">Взрослые:</label>
-              <input class="guests-input field" type="text" id="adults-count" name="adults-count" value="2">
+              <label class="guests-label form-label" for="adults-count">Взрослые:</label>
+              <div class="guests-input-container">
+                <button class="guests-button guests-button-minus" type="button">
+                  <span class="visually-hidden">Уменьшить количество человек</span>
+                </button>
+                <input class="guests-input field" type="number" id="adults-count" name="adults-count" value="2" required min="1" max="99" step="1">
+                <button class="guests-button guests-button-plus" type="button">
+                  <span class="visually-hidden">Увеличить количество человек</span>
+                </button>
+              </div>
             </div>
             <div class="form-group guests">
               <span class="children-label">
-                <label class="guests-label filter-name children-label" for="children-count">Дети:</label>
+                <label class="guests-label form-label children-label" for="children-count">Дети:</label>
                 <span class="tooltip">
                   <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M9 4h2v2H9V4Zm2 12H9V7h2v9Z" clip-rule="evenodd" />
                     </svg>
                   </button>
-                  <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети <br>до 6 лет размещаются бесплатно.</span>
+                  <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до&nbsp;6 лет размещаются бесплатно.</span>
                 </span>
               </span>
-              <input class="guests-input field" type="text" id="children-count" name="children-count" value="2">
+              <div class="guests-input-container">
+                <button class="guests-button guests-button-minus" type="button">
+                  <span class="visually-hidden">Уменьшить количество человек</span>
+                </button>
+                <input class="guests-input field" type="number" id="children-count" name="children-count" value="2" required min="0" max="999" step="1">
+                <button class="guests-button guests-button-plus" type="button">
+                  <span class="visually-hidden">Увеличить количество человек</span>
+                </button>
+              </div>
             </div>
-            <button class="modal-button button">Найти</button>
+            <button class="modal-button button button-light" type="submit">Найти</button>
 
           </form>
         </section>
